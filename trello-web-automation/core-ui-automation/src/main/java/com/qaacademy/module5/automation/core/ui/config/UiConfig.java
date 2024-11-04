@@ -9,6 +9,7 @@ import static com.qaacademy.module5.automation.core.ui.config.ReservedWords.HEIG
 
 public final class UiConfig {
   private static final String UI_PROP_FILE = "./gradle.properties";
+  //core-ui-automation\gradle.properties
   private static UiConfig instance;
   private final PropertiesFileReader propertiesFileReader;
 
