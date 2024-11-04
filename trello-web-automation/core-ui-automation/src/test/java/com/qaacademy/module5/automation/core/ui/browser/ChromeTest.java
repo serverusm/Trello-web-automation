@@ -19,7 +19,7 @@ class ChromeTest {
   @BeforeEach
   void setup() {
     WebDriverManager.chromedriver().setup();
-    chrome = new Chrome();
+    chrome = new Chrome();// Start chrome
   }
 
   @AfterEach
