@@ -30,7 +30,7 @@ public class PropertiesFileReader {
    * @param filePath config properties file path String.
    */
   private void init(final String filePath) {
-    String path = filePath;
+    String path;
 
     if (!new File(filePath).exists()) {
       path = filePath.replace(ReservedWords.DOUBLE_DOT_AND_SLASH.val(), ReservedWords.STRING_EMPTY.val());
@@ -55,10 +55,10 @@ public class PropertiesFileReader {
    * @return value of specified property.
    */
   public String getPropertyValue(final String propertyName) {
-
+    this.properties = new Properties();
     String property = System.getProperty(propertyName);
     if (Objects.isNull(property)) {
-      property = properties.getProperty(propertyName);
+      property = this.properties.getProperty(propertyName);
       LOGGER.info(String.format("properties.getProperty(%s) -> value: %s", propertyName, property));
       return property;
     }
