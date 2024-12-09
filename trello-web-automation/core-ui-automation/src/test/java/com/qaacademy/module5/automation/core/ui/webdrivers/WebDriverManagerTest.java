@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WebDriverManagerTest {
   public static final String GOOGLE_URL = "https://www.google.com/";
+  public static final String TRELLO_URL = "https://trello.com/";
   public static final String GOOGLE = "Google";
   private WebDriverManager webDriverManager;
 
@@ -88,4 +89,26 @@ class WebDriverManagerTest {
     WebElement qaAcademyLink = webDriverManager.getWebDriver().findElement(By.xpath("//h3[text()='QA Training']"));
     Assertions.assertEquals("QA Training", qaAcademyLink.getText());
   }
+
+  @Test
+  @DisplayName("Login trello")
+  @Tag("UnitTest")
+  void loginTrello() {
+    // Go to Google page
+    webDriverManager.getWebDriver().navigate().to(TRELLO_URL);
+    WebElement loginButton = webDriverManager.getWebDriver().findElement(By.xpath("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']"));
+    webDriverManager.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(loginButton));
+    loginButton.click();
+
+    WebElement nameTextBox = WebDriverManager.getInstance().getWebDriver().findElement(By.xpath("//input[@id='username']"));
+    nameTextBox.sendKeys(" ");
+
+    WebElement submitButton = webDriverManager.getWebDriver().findElement(By.xpath("//button[@id='login-submit']"));
+    webDriverManager.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(submitButton));
+    submitButton.click();
+
+    WebElement message = webDriverManager.getWebDriver().findElement(By.xpath("//div[@id='username-uid2-error']"));
+    Assertions.assertEquals("Enter an email address", message.getText());
+  }
+
 }
