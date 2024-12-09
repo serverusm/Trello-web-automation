@@ -22,6 +22,6 @@ public enum WebDriverTypes {
    * @return original word.
    */
   public String val() {
-    return word;
+    return this.word;
   }
 }

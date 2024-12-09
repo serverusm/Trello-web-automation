@@ -1,15 +1,15 @@
 package com.qaacademy.module5.automation.core.ui.config;
 
-import com.qaacademy.module5. automation. core.utils.properties. PropertiesFileReader;
-
+import com.qaacademy.module5.automation.core.utils.properties.PropertiesFileReader;
 import java.util.Objects;
 
 import static com.qaacademy.module5.automation.core.ui.config.ReservedWords .*;
 import static com.qaacademy.module5.automation.core.ui.config.ReservedWords.HEIGHT;
 
 public final class UiConfig {
-  private static final String UI_PROP_FILE = "./gradle.properties";
+  private static final String UI_PROP_FILE = "E:/AutomationWeb/Trello-web-automation/trello-web-automation/core-utils-automation/src/gradle.properties";
   //core-ui-automation\gradle.properties
+  //E:/AutomationWeb/Trello-web-automation/trello-web-automation/core-utils-automation/src/gradle.properties
   private static UiConfig instance;
   private final PropertiesFileReader propertiesFileReader;
 
