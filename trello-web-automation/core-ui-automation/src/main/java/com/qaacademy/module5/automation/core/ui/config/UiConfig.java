@@ -1,13 +1,14 @@
 package com.qaacademy.module5.automation.core.ui.config;
 
 import com.qaacademy.module5.automation.core.utils.properties.PropertiesFileReader;
+
 import java.util.Objects;
 
-import static com.qaacademy.module5.automation.core.ui.config.ReservedWords .*;
+import static com.qaacademy.module5.automation.core.ui.config.ReservedWords.*;
 import static com.qaacademy.module5.automation.core.ui.config.ReservedWords.HEIGHT;
 
 public final class UiConfig {
-  private static final String UI_PROP_FILE = "E:/AutomationWeb/Trello-web-automation/trello-web-automation/core-utils-automation/src/gradle.properties";
+  private static final String UI_PROP_FILE = "./gradle.properties";
   //core-ui-automation\gradle.properties
   //E:/AutomationWeb/Trello-web-automation/trello-web-automation/core-utils-automation/src/gradle.properties
   private static UiConfig instance;
@@ -16,7 +17,7 @@ public final class UiConfig {
   /**
    * Initializes an instance of {@link UiConfig}.
    */
-  private UiConfig(){
+  private UiConfig() {
     propertiesFileReader = new PropertiesFileReader(UI_PROP_FILE);
   }
 
@@ -25,8 +26,8 @@ public final class UiConfig {
    *
    * @return singleton instance.
    */
-  public static synchronized UiConfig getInstance(){
-    if (Objects.isNull(instance)){
+  public static synchronized UiConfig getInstance() {
+    if (Objects.isNull(instance)) {
       instance = new UiConfig();
     }
     return instance;
@@ -37,7 +38,7 @@ public final class UiConfig {
    *
    * @return execution environment name.
    */
-  public String getEnvironment(){
+  public String getEnvironment() {
     return propertiesFileReader.getPropertyValue(ENVIRONMENT_NAME.val());
   }
 
@@ -46,7 +47,7 @@ public final class UiConfig {
    *
    * @return Browser value.
    */
-  public String getBrowser(){
+  public String getBrowser() {
     return propertiesFileReader.getPropertyValue(BROWSER.val());
   }
 
@@ -92,16 +93,16 @@ public final class UiConfig {
    * @return chrome driver version.
    */
 
-  public String getChromeDriverVersion(){
+  public String getChromeDriverVersion() {
     return propertiesFileReader.getPropertyValue(CHROME_DRIVER_VERSION.val());
   }
 
   /**
    * Gets the download folder.
    *
-   * @return  folder path.
+   * @return folder path.
    */
-  public String getDownloadsFolder(){
+  public String getDownloadsFolder() {
     return propertiesFileReader.getPropertyValue(DOWNLOADS.val());
   }
 
@@ -110,15 +111,20 @@ public final class UiConfig {
    *
    * @return width of browser.
    */
-  public int getWidthOfBrowser(){
+  public int getWidthOfBrowser() {
     return Integer.parseInt(propertiesFileReader.getPropertyValue(WIDTH.val()));
   }
 
   /**
    * Gets height of browser.
+   *
    * @return heingt of browser
    */
-  public int getHeightOfBrowser(){
+  public int getHeightOfBrowser() {
     return Integer.parseInt(propertiesFileReader.getPropertyValue(HEIGHT.val()));
+  }
+
+  public boolean isHeadlessMode() {
+    return Boolean.parseBoolean(propertiesFileReader.getPropertyValue(HEADLESS_MODE.val()));
   }
 }
