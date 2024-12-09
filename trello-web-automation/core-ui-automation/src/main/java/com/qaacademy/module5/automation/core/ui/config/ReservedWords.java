@@ -13,6 +13,7 @@ enum ReservedWords {
   CHROME_DRIVER_VERSION("chromeDriverVersion"),
   WIDTH("width"),
   HEIGHT("height"),
+  HEADLESS_MODE("headlessMode"),
   DOWNLOADS("downloads");
 
   private final String word;
