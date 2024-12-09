@@ -10,16 +10,17 @@ import java.util.Properties;
 
 public class PropertiesFileReader {
 
-  private  static  final Logger LOGGER = LogManager.getLogger(PropertiesFileReader.class.getSimpleName());
+  private static final Logger LOGGER = LogManager.getLogger(PropertiesFileReader.class.getSimpleName());
   private static final String ENCODING = "UTF-8";
   private Properties properties;
+
 
   /**
    * Initializes an instanve of {@link PropertiesFileReader}.
    *
    * @param filePath properties file path String.
    */
-  public PropertiesFileReader(final String filePath){
+  public PropertiesFileReader(final String filePath) {
     LOGGER.info(String.format("Reading config file from path:%s", filePath));
     this.init(filePath);
   }
@@ -30,22 +31,22 @@ public class PropertiesFileReader {
    * @param filePath config properties file path String.
    */
   private void init(final String filePath) {
-    String path;
+    String path = filePath;
 
     if (!new File(filePath).exists()) {
       path = filePath.replace(ReservedWords.DOUBLE_DOT_AND_SLASH.val(), ReservedWords.STRING_EMPTY.val());
-
-      try (InputStreamReader inputFile = new InputStreamReader(new FileInputStream(path), ENCODING)) {
-        this.properties = new Properties();
-        this.properties.load(inputFile);
-      } catch (FileNotFoundException e) {
-        LOGGER.warn("The properties file couldn 't be found", e);
-        throw new ExceptionInInitializerError(e);
-      } catch (IOException e) {
-        LOGGER.warn( "A problem of type", e);
-        throw new ExceptionInInitializerError(e);
-      }
     }
+    try (InputStreamReader inputFile = new InputStreamReader(new FileInputStream(path), ENCODING)) {
+      this.properties = new Properties();
+      this.properties.load(inputFile);
+    } catch (FileNotFoundException e) {
+      LOGGER.warn("The properties file couldn't be found", e);
+      throw new ExceptionInInitializerError(e);
+    } catch (IOException e) {
+      LOGGER.warn("A problem of type", e);
+      throw new ExceptionInInitializerError(e);
+    }
+
   }
 
   /**
@@ -55,7 +56,6 @@ public class PropertiesFileReader {
    * @return value of specified property.
    */
   public String getPropertyValue(final String propertyName) {
-    this.properties = new Properties();
     String property = System.getProperty(propertyName);
     if (Objects.isNull(property)) {
       property = this.properties.getProperty(propertyName);

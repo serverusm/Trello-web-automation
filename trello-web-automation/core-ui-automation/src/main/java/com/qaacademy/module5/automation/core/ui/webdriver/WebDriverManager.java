@@ -39,8 +39,8 @@ public final class WebDriverManager {
   private void initializeDriver() {
     var uiConfig = UiConfig.getInstance();
     WebDriverTypes webDriverType = WebDriverTypes.valueOf(uiConfig.getBrowser());
-    webDriverManager = WebDriverFactory.getWebDriverManager(webDriverType);
-    webDriver = webDriverManager.getWebDriver();
+    this.webDriverManager = WebDriverFactory.getWebDriverManager(webDriverType);
+    webDriver = this.webDriverManager.getWebDriver();
     webDriver.manage().window().setSize(new Dimension(uiConfig.getWidthOfBrowser(), uiConfig.getHeightOfBrowser()));
     setDefaultTimeWaits();
   }
@@ -96,4 +96,6 @@ public final class WebDriverManager {
   public WebDriver getWebDriver(){return this.webDriver;}
 
   public WebDriverWait getWebDriverWait(){return this.webDriverWait;}
+
+  public String getCurrentPageTitle() { return webDriver.getTitle(); }
 }
