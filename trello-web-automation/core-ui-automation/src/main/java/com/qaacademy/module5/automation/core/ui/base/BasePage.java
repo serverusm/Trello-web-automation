@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
   protected final WebDriver driver;
-  protected final WebDriverWait wait;//
+  protected final WebDriverWait wait;
   protected final EnvironmentManager environmentManager;
   protected final WebDriverActions action;
 

@@ -24,7 +24,7 @@ public class LoginUserPasswordPageTest {
 
     //Then
     StartAtlassianPage startAtlassianPage = new StartAtlassianPage();
-    Assertions.assertTrue(startAtlassianPage.isSwitchToLabelDisplayed());//isG'dayServeruskToLabelDisplayed
+    Assertions.assertTrue(startAtlassianPage.isSwitchToLabelDisplayed());//Continue with two-step verification
   }
 
 }

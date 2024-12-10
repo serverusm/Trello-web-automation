@@ -7,11 +7,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriverActions {
-  private final WebDriver driver;
+  private final WebDriver wDriver;
   private final WebDriverWait wait;
 
   public WebDriverActions(WebDriver driver, WebDriverWait wait) {
-    this.driver = driver;
+    this.wDriver = driver;
     this.wait = wait;
   }
 
@@ -34,13 +34,13 @@ public class WebDriverActions {
   }
 
   public void setValue(final WebElement webElement, final String value){
-    wait.until(ExpectedConditions.visibilityOf(webElement));
+    this.wait.until(ExpectedConditions.visibilityOf(webElement));
     webElement.clear();
     webElement.sendKeys(value);
   }
 
   public boolean isElementDisplayed(WebElement webElement) {
-    wait.until(ExpectedConditions.visibilityOf(webElement));
+    this.wait.until(ExpectedConditions.visibilityOf(webElement));
     return webElement.isDisplayed();
   }
 }

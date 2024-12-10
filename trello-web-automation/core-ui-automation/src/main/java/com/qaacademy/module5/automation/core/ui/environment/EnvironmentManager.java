@@ -84,7 +84,7 @@ public final class EnvironmentManager {
   private String getUserType(final String filterName) {
     var jsonPathUserFilter = String.format(USERS_TYPE_FILTER, userType);
     jsonPathPortalFilter = String.format(PORTALS_NAME_FILTER, portalWeb);
-    jsonPathFilter = String.format("%s.%s.s.".concat(filterName),
+    jsonPathFilter = String.format("%s.%s.%s.".concat(filterName),
           jsonPathEnvironmentFilter, jsonPathPortalFilter, jsonPathUserFilter);
 
     return getResult(jsonObject, jsonPathFilter).get(index);

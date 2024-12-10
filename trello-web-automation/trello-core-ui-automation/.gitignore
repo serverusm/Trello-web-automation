@@ -1,6 +1,6 @@
 # Custom
 /.gradle/
-/.idea/
+../.idea/
 /build/
 /classes/
 /logs/

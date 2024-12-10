@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class StartAtlassianPage extends BasePage {
 
-  @FindBy(css = "css-xtidjr")
-  private WebElement titlePageLabel;
+  @FindBy(xpath = "//div[@id='ProductHeadingSuffix']/h5")
+  private WebElement subTitleLabel;
   public boolean isSwitchToLabelDisplayed(){
-    return action.isElementDisplayed(titlePageLabel);
+    return action.isElementDisplayed(subTitleLabel);
   }
 }
