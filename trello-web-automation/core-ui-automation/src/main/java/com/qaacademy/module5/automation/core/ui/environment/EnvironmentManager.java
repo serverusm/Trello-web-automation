@@ -48,7 +48,7 @@ public final class EnvironmentManager {
     return instance;
   }
 
-  public void setPertalWeb(String portalWeb) {
+  public void setPortalWeb(String portalWeb) {
     this.portalWeb = portalWeb;
   }
 

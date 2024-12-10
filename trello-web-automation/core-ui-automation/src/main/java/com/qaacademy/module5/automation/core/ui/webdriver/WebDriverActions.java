@@ -38,4 +38,9 @@ public class WebDriverActions {
     webElement.clear();
     webElement.sendKeys(value);
   }
+
+  public boolean isElementDisplayed(WebElement webElement) {
+    wait.until(ExpectedConditions.visibilityOf(webElement));
+    return webElement.isDisplayed();
+  }
 }

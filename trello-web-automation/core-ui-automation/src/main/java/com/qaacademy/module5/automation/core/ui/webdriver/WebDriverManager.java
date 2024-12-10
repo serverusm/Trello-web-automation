@@ -70,7 +70,6 @@ public final class WebDriverManager {
    * @param sleepTimeWait sleep time wait in seconds.
    */
   private void setExplicitTimeWait(final int explicitTimeWait, final int sleepTimeWait) {
-
     webDriverWait = new WebDriverWait(
           webDriver, Duration.ofSeconds(explicitTimeWait), Duration.ofSeconds(sleepTimeWait));
   }

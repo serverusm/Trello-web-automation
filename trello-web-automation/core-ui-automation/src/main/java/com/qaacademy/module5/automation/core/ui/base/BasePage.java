@@ -9,17 +9,17 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
-  protected final WebDriver webDriver;
-  protected final WebDriverWait webDriverWait;
+  protected final WebDriver driver;
+  protected final WebDriverWait wait;//
   protected final EnvironmentManager environmentManager;
-  protected final WebDriverActions wait;
+  protected final WebDriverActions action;
 
   public BasePage( ) {
     environmentManager = EnvironmentManager.getInstance();
     WebDriverManager webDriverManager = WebDriverManager.getInstance();
-    webDriver = webDriverManager.getWebDriver();
-    webDriverWait = webDriverManager.getWebDriverWait();
-    wait = new WebDriverActions(webDriver, webDriverWait);
-    PageFactory.initElements(webDriver, this);
+    driver = webDriverManager.getWebDriver();
+    wait = webDriverManager.getWebDriverWait();
+    action = new WebDriverActions(driver, wait);
+    PageFactory.initElements(driver, this);
   }
 }
