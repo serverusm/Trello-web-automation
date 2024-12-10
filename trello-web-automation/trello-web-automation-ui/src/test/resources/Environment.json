@@ -1,0 +1,21 @@
+{
+  "Environments": [
+    {
+      "Name": "QA",
+      "Portals": [
+        {
+          "Name": "TRELLO",
+          "LoginUrl": "https://id.atlassian.com/login",
+          "BaseUrl": "https://trello.com/",
+          "Users": [
+            {
+              "Type": "TRELLO-USER-PASSWORD",
+              "Username": "",
+              "Password": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
