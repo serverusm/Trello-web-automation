@@ -1,4 +1,5 @@
 rootProject.name = 'trello-web-automation'
 include 'core-utils-automation'
 include 'core-ui-automation'
+include 'trello-core-ui-automation'
 

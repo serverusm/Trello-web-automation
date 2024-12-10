@@ -48,7 +48,7 @@ public final class EnvironmentManager {
     return instance;
   }
 
-  public void setPertalWeb(String portalWeb) {
+  public void setPortalWeb(String portalWeb) {
     this.portalWeb = portalWeb;
   }
 
@@ -84,7 +84,7 @@ public final class EnvironmentManager {
   private String getUserType(final String filterName) {
     var jsonPathUserFilter = String.format(USERS_TYPE_FILTER, userType);
     jsonPathPortalFilter = String.format(PORTALS_NAME_FILTER, portalWeb);
-    jsonPathFilter = String.format("%s.%s.s.".concat(filterName),
+    jsonPathFilter = String.format("%s.%s.%s.".concat(filterName),
           jsonPathEnvironmentFilter, jsonPathPortalFilter, jsonPathUserFilter);
 
     return getResult(jsonObject, jsonPathFilter).get(index);

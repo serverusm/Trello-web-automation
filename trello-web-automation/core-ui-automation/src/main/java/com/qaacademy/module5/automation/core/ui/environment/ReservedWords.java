@@ -4,7 +4,8 @@ package com.qaacademy.module5.automation.core.ui.environment;
  * Custom reserved words enum.
  */
 enum ReservedWords {
-  ENVIRONMENT_PATH("src/test/resources/Environment.json");
+  ENVIRONMENT_PATH("E:/AutomationWeb/Trello-web-automation/trello-web-automation/trello-core-ui-automation/src/test/resources/Environment.json");
+  //E:/AutomationWeb/Trello-web-automation/trello-web-automation/trello-core-ui-automation/src\test/resources/Environment.json
   private final String word;
 
   /**
