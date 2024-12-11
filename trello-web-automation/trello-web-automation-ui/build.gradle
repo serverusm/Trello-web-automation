@@ -35,7 +35,7 @@ tasks.register("executeFeature", Test) {
     scanForTestClasses = false
     options {
         useDefaultListeners = false
-        jvmArgs = ["-Dcucumber.features=${rootProject.rootDir}/trello-web-automation-ui/src/test/resources/features/*"]
+        jvmArgs = ["-Dcucumber.features=${rootProject.rootDir}/trello-web-automation-ui/src/test/resources/features/"]
         jvmArgs = ["-Dcucumber.plugin=pretty." + "io.qameta.allure.cucumber7jvm.AllureCucumber7jvm"]
         jvmArgs = ["-Dcucumber.filter.tags=" + System.getProperty("cucumberTags")]
         jvmArgs = ["-DenvironmentName=" + environmentName]
