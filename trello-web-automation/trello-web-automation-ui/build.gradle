@@ -20,8 +20,8 @@ dependencies {
     implementation 'io.cucumber:cucumber-picocontainer:7.14.0'
     implementation 'io.qameta.allure:allure-cucumber7-jvm:2.24.0'
 
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+//    testImplementation platform('org.junit:junit-bom:5.9.1')
+//    testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
 test {
